@@ -310,45 +310,44 @@
       position: relative;
     }
 
+    /* Localize e substitua o .ps .pa */
     .ps .pa {
       position: absolute;
       top: 0;
       left: 0;
-      right: 0;
-      bottom: 0;
+      width: 100%;
+      height: 100%;
       overflow: hidden;
       z-index: 1;
-      /* Garante que a foto tenha uma camada definida */
-      background-color: #1a0f00;
-      /* Cor de fundo caso a foto falhe */
+      /* Garante que a foto fica no fundo do slide */
     }
 
+    /* Garante que a imagem preenche tudo e é visível */
     .ps .pa img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
+      opacity: 1 !important;
     }
 
+    /* O overlay (gradiente escuro) deve ficar ACIMA da foto */
     .ps .ov {
       position: absolute;
       top: 0;
       left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(transparent 40%, rgba(0, 0, 0, 0.8) 100%);
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent 30%, rgba(0, 0, 0, 0.8) 100%);
+      z-index: 2;
       pointer-events: none;
-      z-index: 5;
     }
 
+    /* O conteúdo (texto) deve ficar no topo de tudo */
     .ps .cap {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 40px 28px 36px;
-      z-index: 10;
-      pointer-events: none;
+      position: relative;
+      z-index: 3;
+      padding: 40px;
     }
 
     .ps .cap .lbl {
@@ -913,7 +912,7 @@
             <div class="db">
               <div class="df" id="dream-fill"></div>
             </div>
-            <br/>
+            <br />
             <div class="dl"><span>Sonhando juntos</span><span>Em breve: nossa casa 🌻</span></div>
           </div>
         </div>
